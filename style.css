@@ -1,306 +1,332 @@
 body {
-	 font-family: "Rubik", sans-serif;
-	 color: #303841;
+    font-family: "Rubik", sans-serif;
+    color: #303841;
 }
- .wrapper {
-	 height: 100vh;
-	 display: flex;
-	 align-items: center;
-	 justify-content: space-between;
-	 position: relative;
-	 flex-wrap: wrap;
-	 padding: 40px 20px;
-	 max-width: 720px;
-	 margin: 0 auto;
+.wrapper {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+    max-width: 720px;
+    margin: 0 auto;
 }
- .wrapper::before {
-	 content: "";
-	 display: block;
-	 position: fixed;
-	 width: 300%;
-	 height: 100%;
-	 top: 50%;
-	 left: 50%;
-	 border-radius: 100%;
-	 transform: translateX(-50%) skewY(-8deg);
-	 background-color: #f6c90e;
-	 z-index: -1;
-	 animation: wave 8s ease-in-out infinite alternate;
+.wrapper::before {
+    content: "";
+    display: block;
+    position: fixed;
+    width: 300%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    border-radius: 100%;
+    transform: translateX(-50%) skewY(-8deg);
+    background-color: #c751bd;
+    z-index: -1;
+    animation: wave 8s ease-in-out infinite alternate;
 }
- @keyframes wave {
-	 0% {
-		 transform: translateX(-50%) skew(0deg, -8deg);
-	}
-	 100% {
-		 transform: translateX(-30%) skew(8deg, -4deg);
-	}
+@keyframes wave {
+    0% {
+        transform: translateX(-50%) skew(0deg, -8deg);
+   }
+    100% {
+        transform: translateX(-30%) skew(8deg, -4deg);
+   }
 }
- .screen {
-	 background-color: #fff;
-	 box-sizing: border-box;
-	 width: 340px;
-	 height: 600px;
-	 box-shadow: 0 3.2px 2.2px rgba(0, 0, 0, 0.02), 0 7px 5.4px rgba(0, 0, 0, 0.028), 0 12.1px 10.1px rgba(0, 0, 0, 0.035), 0 19.8px 18.1px rgba(0, 0, 0, 0.042), 0 34.7px 33.8px rgba(0, 0, 0, 0.05), 0 81px 81px rgba(0, 0, 0, 0.07);
-	 border-radius: 30px;
-	 overflow-y: scroll;
-	 padding: 0 28px;
-	 position: relative;
-	 margin-bottom: 20px;
+.screen {
+    background-color: #fff;
+    box-sizing: border-box;
+    width: 340px;
+    height: 600px;
+    box-shadow: 0 3.2px 2.2px rgba(0, 0, 0, 0.02), 0 7px 5.4px rgba(0, 0, 0, 0.028), 0 12.1px 10.1px rgba(0, 0, 0, 0.035), 0 19.8px 18.1px rgba(0, 0, 0, 0.042), 0 34.7px 33.8px rgba(0, 0, 0, 0.05), 0 81px 81px rgba(0, 0, 0, 0.07);
+    border-radius: 30px;
+    overflow-y: scroll;
+    padding: 0 28px;
+    position: relative;
+    margin-bottom: 20px;
+    z-index: 1;
 }
- .screen::before {
-	 content: "";
-	 display: block;
-	 position: absolute;
-	 width: 300px;
-	 height: 300px;
-	 border-radius: 100%;
-	 background-color: #f6c90e;
-	 top: -20%;
-	 left: -50%;
-	 z-index: 0;
+.screen::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    background-color: #c751bd;
+    top: -20%;
+    left: -50%;
+    z-index: 0;
 }
- .screen::-webkit-scrollbar {
-	 display: none;
+.screen::-webkit-scrollbar {
+    display: none;
 }
- .screen > .title {
-	 font-size: 24px;
-	 font-weight: bold;
-	 margin: 20px 0;
-	 position: relative;
+.screen > .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0;
+    position: relative;
 }
- .app-bar {
-	 padding: 12px 0;
-	 position: relative;
+.app-bar {
+    padding: 12px 0;
+    position: relative;
 }
- .app-bar > .logo {
-	 display: block;
-	 width: 50px;
+.app-bar > .logo {
+    display: block;
+    width: 50px;
 }
- .shop-items {
-	 position: relative;
+.shop-items {
+    position: relative;
 }
- .item-block {
-	 padding: 40px 0 70px;
+.item-block {
+    padding: 40px 0 70px;
 }
- .item-block:first-child {
-	 padding-top: 0;
+.item-block:first-child {
+    padding-top: 0;
 }
- .item-block > .image-area {
-	 border-radius: 30px;
-	 height: 380px;
-	 display: flex;
-	 align-items: center;
-	 overflow: hidden;
+.item-block > .image-area {
+    border-radius: 30px;
+    height: 380px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
 }
- .item-block > .image-area > .image {
-	 display: block;
-	 width: 100%;
-	 filter: drop-shadow(0 30px 20px rgba(0, 0, 0, 0.2));
-	 transform: rotate(-24deg);
-	 margin-left: -16px;
+.item-block > .image-area > .image {
+    display: block;
+    width: 100%;
+    filter: drop-shadow(0 30px 20px rgba(0, 0, 0, 0.2));
+    transform: rotate(-24deg);
+    margin-left: -16px;
 }
- .item-block > .name {
-	 font-size: 20px;
-	 font-weight: bold;
-	 margin: 26px 0 20px;
-	 line-height: 1.5;
+.item-block > .name {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 26px 0 20px;
+    line-height: 1.5;
 }
- .item-block > .description {
-	 font-size: 13px;
-	 color: #777;
-	 line-height: 1.8;
-	 margin-bottom: 20px;
+.item-block > .description {
+    font-size: 13px;
+    color: #777;
+    line-height: 1.8;
+    margin-bottom: 20px;
 }
- .item-block > .bottom-area {
-	 display: flex;
-	 justify-content: space-between;
-	 align-items: center;
+.item-block > .bottom-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
- .item-block > .bottom-area > .price {
-	 font-size: 18px;
-	 font-weight: bold;
+.item-block > .bottom-area > .price {
+    font-size: 18px;
+    font-weight: bold;
 }
- .item-block > .bottom-area > .button {
-	 cursor: pointer;
-	 background-color: #f6c90e;
-	 font-weight: bold;
-	 font-size: 14px;
-	 box-sizing: border-box;
-	 height: 46px;
-	 padding: 16px 20px;
-	 border-radius: 100px;
-	 box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-	 transition: box-shadow 0.4s, background-color 0.2s;
-	 user-select: none;
-	 white-space: nowrap;
-	 position: relative;
-	 display: flex;
-	 align-items: center;
-	 overflow: hidden;
+.item-block > .bottom-area > .button {
+    cursor: pointer;
+    background-color: #c751bd;
+    font-weight: bold;
+    font-size: 14px;
+    box-sizing: border-box;
+    height: 46px;
+    padding: 16px 20px;
+    border-radius: 100px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.4s, background-color 0.2s;
+    user-select: none;
+    white-space: nowrap;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
 }
- .item-block > .bottom-area > .button:hover {
-	 background-color: #f8d43f;
-	 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+.item-block > .bottom-area > .button:hover {
+    background-color: #c751bd;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
- .item-block > .bottom-area > .button.-active {
-	 pointer-events: none;
-	 cursor: default;
+.item-block > .bottom-area > .button.-active {
+    pointer-events: none;
+    cursor: default;
 }
- .item-block > .bottom-area > .button > .cover {
-	 width: 16px;
-	 height: 16px;
-	 position: absolute;
-	 display: flex;
-	 justify-content: center;
-	 align-items: center;
+.item-block > .bottom-area > .button > .cover {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
- .item-block > .bottom-area > .button > .cover > .check {
-	 width: 100%;
-	 height: 100%;
-	 transform: translate(-100%, -73%) rotate(-45deg);
-	 position: absolute;
-	 left: 50%;
-	 top: 50%;
+.item-block > .bottom-area > .button > .cover > .check {
+    width: 100%;
+    height: 100%;
+    transform: translate(-100%, -73%) rotate(-45deg);
+    position: absolute;
+    left: 50%;
+    top: 50%;
 }
- .item-block > .bottom-area > .button > .cover > .check::before, .item-block > .bottom-area > .button > .cover > .check::after {
-	 content: "";
-	 display: block;
-	 background-color: #303841;
-	 position: absolute;
-	 left: 0;
-	 bottom: 0;
-	 border-radius: 10px;
+.item-block > .bottom-area > .button > .cover > .check::before, .item-block > .bottom-area > .button > .cover > .check::after {
+    content: "";
+    display: block;
+    background-color: #303841;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-radius: 10px;
 }
- .item-block > .bottom-area > .button > .cover > .check::before {
-	 width: 3px;
-	 height: 50%;
+.item-block > .bottom-area > .button > .cover > .check::before {
+    width: 3px;
+    height: 50%;
 }
- .item-block > .bottom-area > .button > .cover > .check::after {
-	 width: 100%;
-	 height: 3px;
+.item-block > .bottom-area > .button > .cover > .check::after {
+    width: 100%;
+    height: 3px;
 }
- .cart-items {
-	 position: relative;
+.cart-items {
+    position: relative;
 }
- .no-content {
-	 position: relative;
+.no-content {
+    position: relative;
 }
- .no-content > .text {
-	 font-size: 14px;
+.no-content > .text {
+    font-size: 14px;
 }
- .cart-item {
-	 display: flex;
-	 padding: 20px 0;
+.cart-item {
+    display: flex;
+    padding: 20px 0;
 }
- .cart-item > .right > .name {
-	 font-size: 14px;
-	 font-weight: bold;
-	 line-height: 1.5;
-	 margin-bottom: 10px;
+.cart-item > .right > .name {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.5;
+    margin-bottom: 10px;
 }
- .cart-item > .right > .price {
-	 font-size: 20px;
-	 font-weight: bold;
-	 margin-bottom: 16px;
+.cart-item > .right > .price {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 16px;
 }
- .cart-item > .right > .count {
-	 display: flex;
-	 align-items: center;
+.cart-item > .right > .count {
+    display: flex;
+    align-items: center;
 }
- .cart-item > .right > .count > .number {
-	 font-size: 14px;
-	 margin: 0 14px;
-	 width: 20px;
-	 text-align: center;
+.cart-item > .right > .count > .number {
+    font-size: 14px;
+    margin: 0 14px;
+    width: 20px;
+    text-align: center;
 }
- .cart-item > .right > .count .button {
-	 cursor: pointer;
-	 width: 28px;
-	 height: 28px;
-	 border-radius: 100%;
-	 background-color: #eee;
-	 font-size: 16px;
-	 font-weight: bold;
-	 display: flex;
-	 justify-content: center;
-	 align-items: center;
-	 transition: 0.2s;
-	 user-select: none;
+.cart-item > .right > .count .button {
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    border-radius: 100%;
+    background-color: #eee;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+    user-select: none;
 }
- .cart-item > .right > .count .button:hover {
-	 background-color: #ddd;
+.cart-item > .right > .count .button:hover {
+    background-color: #ddd;
 }
- .cart-image {
-	 width: 90px;
-	 height: 90px;
-	 border-radius: 100%;
-	 background-color: #eee;
-	 margin-right: 34px;
+.cart-image {
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    background-color: #eee;
+    margin-right: 34px;
 }
 
- .cart-image > .image-wrapper > .image {
-	 display: block;
-	 width: 140%;
-	 transform: rotate(-28deg) translateY(-40px);
-	 filter: drop-shadow(0 30px 20px rgba(0, 0, 0, 0.2));
+.cart-image > .image-wrapper > .image {
+    display: block;
+    width: 140%;
+    transform: rotate(-28deg) translateY(-40px);
+    filter: drop-shadow(0 30px 20px rgba(0, 0, 0, 0.2));
 }
- .buttonText-leave-active, .buttonText-enter-active {
-	 transition: opacity 0.2s, top 0.35s;
+.buttonText-leave-active, .buttonText-enter-active {
+    transition: opacity 0.2s, top 0.35s;
 }
- .buttonText-leave-to, .buttonText-enter {
-	 opacity: 0;
+.buttonText-leave-to, .buttonText-enter {
+    opacity: 0;
 }
 .cartList-enter-active {
 /*     transition: all 2s; */
-    transition-delay: calc(0.1s * var(--index));
+   transition-delay: calc(0.1s * var(--index));
 }
- .cartList-enter-active > .right > .name, .cartList-enter-active > .right > .price {
-	 transition: 0.4s;
+.cartList-enter-active > .right > .name, .cartList-enter-active > .right > .price {
+    transition: 0.4s;
 }
- .cartList-enter-active > .right > .name {
-	 transition-delay: 0.7s;
+.cartList-enter-active > .right > .name {
+    transition-delay: 0.7s;
 }
- .cartList-enter-active > .right > .price {
-	 transition-delay: 0.85s;
+.cartList-enter-active > .right > .price {
+    transition-delay: 0.85s;
 }
- .cartList-enter-active > .right > .count {
-	 transition: opacity 0.4s;
-	 transition-delay: 1s;
+.cartList-enter-active > .right > .count {
+    transition: opacity 0.4s;
+    transition-delay: 1s;
 }
- .cartList-enter-active .cart-image {
-	 transition: 0.5s cubic-bezier(0.79, 0.01, 0.22, 1);
+.cartList-enter-active .cart-image {
+    transition: 0.5s cubic-bezier(0.79, 0.01, 0.22, 1);
 }
- .cartList-enter-active .cart-image > .image-wrapper {
-	 transition: 0.5s cubic-bezier(0.79, 0.01, 0.22, 1) 0.1s;
+.cartList-enter-active .cart-image > .image-wrapper {
+    transition: 0.5s cubic-bezier(0.79, 0.01, 0.22, 1) 0.1s;
 }
- .cartList-enter > .right > .name, .cartList-enter > .right > .price {
-	 opacity: 0;
-	 transform: translateX(30px);
+.cartList-enter > .right > .name, .cartList-enter > .right > .price {
+    opacity: 0;
+    transform: translateX(30px);
 }
- .cartList-enter > .right .count {
-	 opacity: 0;
+.cartList-enter > .right .count {
+    opacity: 0;
 }
- .cartList-enter .cart-image {
-	 transform: scale(0);
+.cartList-enter .cart-image {
+    transform: scale(0);
 }
- .cartList-enter .cart-image > .image-wrapper {
-	 transform: scale(0);
+.cartList-enter .cart-image > .image-wrapper {
+    transform: scale(0);
 }
- .cartList-leave-active {
-	 transition: 0.7s cubic-bezier(0.79, 0.01, 0.22, 1);
-	 position: absolute;
+.cartList-leave-active {
+    transition: 0.7s cubic-bezier(0.79, 0.01, 0.22, 1);
+    position: absolute;
 }
- .cartList-leave-to {
-	 transform: scale(0);
-	 opacity: 0;
+.cartList-leave-to {
+    transform: scale(0);
+    opacity: 0;
 }
- .cartList-move {
-	 transition: 0.7s cubic-bezier(0.79, 0.01, 0.22, 1);
+.cartList-move {
+    transition: 0.7s cubic-bezier(0.79, 0.01, 0.22, 1);
 }
- .noContent-enter-active, .noContent-leave-active {
-	 transition: opacity 0.5s;
-	 position: absolute;
+.noContent-enter-active, .noContent-leave-active {
+    transition: opacity 0.5s;
+    position: absolute;
 }
- .noContent-enter, .noContent-leave-to {
-	 opacity: 0;
+.noContent-enter, .noContent-leave-to {
+    opacity: 0;
 }
+
+.character {
+    width: 80px;
+    height: 80px;
+    background-image: url('245.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 70;
+    left: 250;
+    transform-origin: bottom center;
+    animation: characterAnimation 2s ease-in-out infinite;
+  }
+  
+  @keyframes characterAnimation {
+    0% {
+      transform: rotate(5deg) translateY(0);
+    }
+    50% {
+      transform: rotate(-5deg) translateY(-10px);
+    }
+    100% {
+      transform: rotate(5deg) translateY(0);
+    }
+  }
