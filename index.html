@@ -1,86 +1,89 @@
 
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vue to HTML, CSS, JS</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <nav>
-    <ul class="nav-bar">
-      <li class="nav-item">Home</li>
-      <li class="nav-item">Shop</li>
-      <li class="nav-item">About</li>
-      <li class="nav-item">Contact</li>
-    </ul>
-  </nav>
-  <div id="app">
-   <div class="wrapper">
-  <div class="screen -left">
-    <div class="app-bar">
-      <img class="logo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1315882/pngwave.png" />
-    </div>
-    <div class="title">Picked items</div>
-    <div class="shop-items">
-      <div class="item" v-for="item in shopItems" :key="item.id">
-        <div class="item-block">
-          <div class="image-area" :style="{backgroundColor: item.color}">
-            <img class="image" :src="item.image" />
-          </div>
-          <div class="name">{{ item.name }}</div>
-          <div class="description">{{ item.description }}</div>
-          <div class="bottom-area">
-            <div class="price">${{ item.price }}</div>
-            <div class="button" @click="addToCart(item)" :ref="'addButton' + item.id" :class="{'-active': item.inCart}">
-              <transition name="buttonText" mode="out-in">
-                <p v-if="!item.inCart">ADD TO CART</p>
-                <div class="cover" v-else>
-                  <div class="check"></div>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Vue to HTML, CSS, JS</title>
+      <link rel="stylesheet" href="stylesheet.css">
+    </head>
+    <body>
+      <!-- <nav>
+        <ul class="nav-bar">
+          <li class="nav-item">Home</li>
+          <li class="nav-item">Shop</li>
+          <li class="nav-item">About</li>
+          <li class="nav-item">Contact</li>
+        </ul>
+      </nav> -->
+      <div id="app">
+       <div class="wrapper">
+      <div class="screen -left">
+        <div class="character"></div>
+        <div class="app-bar">
+          <img class="logo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1315882/pngwave.png" />
+        </div>
+        <div class="title">Picked items</div>
+        <div class="shop-items">
+          <div class="item" v-for="item in shopItems" :key="item.id">
+            <div class="item-block">
+              <div class="image-area" :style="{backgroundColor: item.color}">
+                <img class="image" :src="item.image" />
+              </div>
+              <div class="name">{{ item.name }}</div>
+              <div class="description">{{ item.description }}</div>
+              <div class="bottom-area">
+                <div class="price">${{ item.price }}</div>
+                <div class="button" @click="addToCart(item)" :ref="'addButton' + item.id" :class="{'-active': item.inCart}">
+                  <transition name="buttonText" mode="out-in">
+                    <p v-if="!item.inCart">ADD TO CART</p>
+                    <div class="cover" v-else>
+                      <div class="check"></div>
+                    </div>
+                  </transition>
                 </div>
-              </transition>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="screen -right" ref="cartItems">
-    <div class="app-bar">
-      <img class="logo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1315882/pngwave.png" />
-    </div>
-    <div class="title">Your cart</div>
-    <transition name="noContent">
-      <div class="no-content" v-if="$data.cartItems.length === 0">
-        <p class="text">Your cart is empty.</p>
-      </div>
-    </transition>
- <div class="cart-items">
-  <transition-group name="cartList" tag="div">
-    <div class="cart-item" v-for="item in $data.cartItems" :key="item.id">
-      <div class="left">
-        <div class="cart-image" :ref="`cartImageWrapper${item.id}`">
-          <div class="image-wrapper">
-            <img class="image" :src="item.image" :ref="`cartImageShoe${item.id}`" />
+      <div class="screen -right" ref="cartItems">
+        <div class="app-bar">
+          <img class="logo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1315882/pngwave.png" />
+        </div>
+        <div class="title">Your cart</div>
+        <transition name="noContent">
+          <div class="no-content" v-if="$data.cartItems.length === 0">
+            <p class="text">Your cart is empty.</p>
+          </div>
+        </transition>
+     <div class="cart-items">
+      <transition-group name="cartList" tag="div">
+        <div class="cart-item" v-for="item in $data.cartItems" :key="item.id">
+          <div class="left">
+            <div class="cart-image" :ref="`cartImageWrapper${item.id}`">
+              <div class="image-wrapper">
+                <img class="image" :src="item.image" :ref="`cartImageShoe${item.id}`" />
+              </div>
+            </div>
+          </div>
+          <div class="right">
+            <div class="name" :ref="`cartText${item.id}`">{{item.name}}</div>
+            <div class="price" :ref="`cartPrice${item.id}`">${{item.price}}</div>
+            <div class="count">
+              <div class="button" @click="decrement(item)"> &lt; </div>
+              <div class="number">{{item.count}}</div>
+              <div class="button" @click="increment(item)"> &gt; </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="right">
-        <div class="name" :ref="`cartText${item.id}`">{{item.name}}</div>
-        <div class="price" :ref="`cartPrice${item.id}`">${{item.price}}</div>
-        <div class="count">
-          <div class="button" @click="decrement(item)"> &lt; </div>
-          <div class="number">{{item.count}}</div>
-          <div class="button" @click="increment(item)"> &gt; </div>
-        </div>
+      </transition-group>
+    </div>
       </div>
     </div>
-  </transition-group>
-</div>
-  </div>
-</div>
-  </div>
- <script src="https://unpkg.com/vue@3.2.26/dist/vue.global.js"></script>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-</body>
+      </div>
+     <script src="https://unpkg.com/vue@3.2.26/dist/vue.global.js"></script>
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+      <script src="app.js"></script>
+    </body>
+    
